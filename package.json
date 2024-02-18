@@ -2,11 +2,15 @@
   "name": "restaurant-page",
   "version": "1.0.0",
   "description": "Create a simple restaurant page. This project focused on bundling and other related processes within webpack.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.90.2",
+    "webpack-cli": "^5.1.4"
+  }
 }
