@@ -1,0 +1,12 @@
+{
+  "name": "restaurant-page",
+  "version": "1.0.0",
+  "description": "Create a simple restaurant page. This project focused on bundling and other related processes within webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
