@@ -84,13 +84,14 @@ body {
   align-items: center;
 }
 
-.hero-text .main-text {
-  color: var(--primary-white);
-  font-size: 1.25rem;
-  opacity: 50%;
+.hero-main-text {
+  color: var(--primary-yellow);
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: 500;
 }
 
-.menu-highlights {
+.hero-highlights {
   color: var(--primary-white);
   font-size: 3rem;
 }
