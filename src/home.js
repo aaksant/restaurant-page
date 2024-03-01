@@ -9,15 +9,15 @@ export default function loadHome() {
   heroTextContainer.classList.add('hero-text-container');
 
   const heroMainText = document.createElement('div');
-  heroMainText.classList.add('hero-text', 'main-text');
-  heroMainText.textContent = 'Forget about healthy foods';
+  heroMainText.classList.add('hero-main-text');
+  heroMainText.textContent = 'Slurp, munch, experience';
 
   const menuHighlights = document.createElement('div');
-  menuHighlights.classList.add('hero-text', 'menu-highlights');
+  menuHighlights.classList.add('hero-highlights');
 
   const firstText = document.createElement('span');
   firstText.classList.add('first-text');
-  firstText.textContent = 'Eat some ';
+  firstText.textContent = 'Find your favorite ';
 
   const secText = document.createElement('span');
   secText.classList.add('sec-text');

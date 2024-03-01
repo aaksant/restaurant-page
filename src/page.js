@@ -27,7 +27,7 @@ function loadHeader() {
 
   const homeBtn = createButton('Home');
   const menuBtn = createButton('Menu');
-  const aboutBtn = createButton('About');
+  const aboutBtn = createButton('About us');
 
   navItemContainer.appendChild(homeBtn);
   navItemContainer.appendChild(menuBtn);
