@@ -73,6 +73,10 @@ body {
   color: var(--primary-black);
 }
 
+.nav-btn:active {
+  background-color: #989b2f;
+}
+
 #content {
   grid-row: 2 / 3;
 }
