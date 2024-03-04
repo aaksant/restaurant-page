@@ -1,7 +1,21 @@
 import loadHome from './home';
+import loadMenu from './menu';
 
-function loadHeader() {
-  function createButton(text) {
+function setCurrentTab(tab) {
+  const tabs = document.querySelectorAll('.nav-btn');
+
+  tabs.forEach((tab) => {
+    if (tab !== this) {
+      tab.classList.remove('is-active');
+    }
+  });
+
+  tab.classList.add('is-active');
+}
+
+// create nav here
+function loadNav() {
+  function createTab(text) {
     const li = document.createElement('li');
     const tab = document.createElement('button');
 
@@ -13,30 +27,62 @@ function loadHeader() {
     return li;
   }
 
-  const header = document.createElement('header');
-  const logoContainer = document.createElement('div');
   const nav = document.createElement('nav');
   const navItemContainer = document.createElement('ul');
 
-  header.classList.add('header');
-  logoContainer.classList.add('logo-container');
   nav.classList.add('nav-container');
   navItemContainer.classList.add('nav-item-container');
 
-  logoContainer.textContent = 'noodlenirvana.com';
+  const homeTab = createTab('Home');
+  homeTab.addEventListener('click', (e) => {
+    if (e.target.classList.contains('is-active')) {
+      e.preventDefault();
+    } else {
+      setCurrentTab(homeTab);
+      loadHome();
+    }
+  });
 
-  const homeBtn = createButton('Home');
-  const menuBtn = createButton('Menu');
-  const aboutBtn = createButton('About us');
+  const menuTab = createTab('Menu');
+  menuTab.addEventListener('click', (e) => {
+    if (e.target.classList.contains('is-active')) {
+      e.preventDefault();
+    } else {
+      setCurrentTab(homeTab);
+      loadMenu();
+    }
+  });
 
-  navItemContainer.appendChild(homeBtn);
-  navItemContainer.appendChild(menuBtn);
-  navItemContainer.appendChild(aboutBtn);
+  const aboutTab = createTab('About us');
+  aboutTab.addEventListener('click', (e) => {
+    if (e.target.classList.contains('is-active')) {
+      e.preventDefault();
+    } else {
+      setCurrentTab(homeTab);
+      // loadAbout();
+    }
+  });
+
+  navItemContainer.appendChild(homeTab);
+  navItemContainer.appendChild(menuTab);
+  navItemContainer.appendChild(aboutTab);
 
   nav.appendChild(navItemContainer);
 
+  return nav;
+}
+
+function loadHeader() {
+  const header = document.createElement('header');
+  const logoContainer = document.createElement('div');
+
+  header.classList.add('header');
+  logoContainer.classList.add('logo-container');
+
+  logoContainer.textContent = 'noodlenirvana.com';
+
   header.appendChild(logoContainer);
-  header.appendChild(nav);
+  header.appendChild(loadNav());
 
   return header;
 }
@@ -72,5 +118,7 @@ export default function loadPage() {
   content.appendChild(loadHeader());
   content.appendChild(loadMain());
   content.appendChild(loadFooter());
+
+  setCurrentTab(document.querySelector('.nav-btn'));
   loadHome();
 }
