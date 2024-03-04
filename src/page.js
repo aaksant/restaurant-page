@@ -41,6 +41,13 @@ function loadHeader() {
   return header;
 }
 
+function loadMain() {
+  const main = document.createElement('main');
+  main.classList.add('main');
+
+  return main;
+}
+
 function loadFooter() {
   const footer = document.createElement('footer');
   const span = document.createElement('span');
@@ -60,10 +67,10 @@ function loadFooter() {
 }
 
 export default function loadPage() {
-  const body = document.querySelector('body');
   const content = document.getElementById('content');
 
-  body.appendChild(loadHeader());
-  content.appendChild(loadHome());
-  body.appendChild(loadFooter());
+  content.appendChild(loadHeader());
+  content.appendChild(loadMain());
+  content.appendChild(loadFooter());
+  loadHome();
 }
