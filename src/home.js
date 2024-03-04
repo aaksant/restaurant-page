@@ -1,4 +1,4 @@
-function loadhero() {
+function loadHero() {
   const heroContainer = document.createElement('div');
   heroContainer.classList.add('hero-container');
 
@@ -34,7 +34,7 @@ function loadhero() {
 export default function loadHome() {
   const home = document.createElement('div');
   home.classList.add('home');
-  home.appendChild(loadhero());
+  home.appendChild(loadHero());
 
   const main = document.querySelector('.main');
   main.appendChild(home);
