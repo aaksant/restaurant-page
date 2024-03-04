@@ -1,7 +1,4 @@
-export default function loadHome() {
-  const home = document.createElement('div');
-  home.classList.add('home');
-
+function loadhero() {
   const heroContainer = document.createElement('div');
   heroContainer.classList.add('hero-container');
 
@@ -31,7 +28,14 @@ export default function loadHome() {
 
   heroContainer.appendChild(heroTextContainer);
 
-  home.appendChild(heroContainer);
+  return heroContainer;
+}
 
-  return home;
+export default function loadHome() {
+  const home = document.createElement('div');
+  home.classList.add('home');
+  home.appendChild(loadhero());
+
+  const main = document.querySelector('.main');
+  main.appendChild(home);
 }
