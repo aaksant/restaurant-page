@@ -13,7 +13,6 @@ function setCurrentTab(tab) {
   tab.classList.add('is-active');
 }
 
-// create nav here
 function loadNav() {
   function createTab(text) {
     const li = document.createElement('li');
@@ -48,7 +47,7 @@ function loadNav() {
     if (e.target.classList.contains('is-active')) {
       e.preventDefault();
     } else {
-      setCurrentTab(homeTab);
+      setCurrentTab(menuTab);
       loadMenu();
     }
   });
@@ -58,7 +57,7 @@ function loadNav() {
     if (e.target.classList.contains('is-active')) {
       e.preventDefault();
     } else {
-      setCurrentTab(homeTab);
+      setCurrentTab(aboutTab);
       // loadAbout();
     }
   });
