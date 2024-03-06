@@ -1,9 +1,5 @@
-/* Poppins font import */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 :root {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
   --medium-padding: 0.75em;
   --medium-margin: 120px;
   --medium-gap: 50px;
@@ -15,28 +11,33 @@
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr 50px;
   background-image: url('/img/noodle-steamy.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+#content {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+}
+
+/* Header */
 .header {
   grid-row: 1 / 2;
   padding: var(--medium-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
 }
 
 .nav-btn,
@@ -77,10 +78,11 @@ body {
   background-color: #989b2f;
 }
 
-#content {
+.main {
   grid-row: 2 / 3;
 }
 
+/* Home */
 .home {
   height: 100%;
   display: flex;
@@ -100,6 +102,79 @@ body {
   font-size: 3rem;
 }
 
+/* Menu */
+.menu-wrapper {
+  color: var(--primary-white);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--medium-gap);
+  padding: var(--medium-padding);
+}
+
+.tab-title {
+  letter-spacing: 3px;
+  font-size: 4rem;
+  font-weight: bolder;
+  color: var(--primary-yellow);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+}
+
+.category-container {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.type {
+  display: grid;
+  text-align: center;
+  font-size: 2.25rem;
+  color: var(--primary-yellow);
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  margin-bottom: var(--small-margin);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.5rem;
+  align-items: center;
+}
+
+.type::before,
+.type::after {
+  content: '';
+  height: 5px;
+  background-color: transparent;
+  display: block;
+  border: 1px solid var(--primary-yellow);
+}
+
+.menu-row-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 75px;
+  margin-bottom: var(--small-margin);
+}
+
+.menu-row {
+  padding: var(--medium-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--medium-gap);
+}
+
+.menu-name,
+.menu-price {
+  color: var(--primary-yellow);
+}
+
+.menu-name {
+  font-size: 1.75rem;
+}
+
+.menu-description {
+  font-weight: lighter;
+}
+
+/* Footer */
 a {
   text-decoration: none;
 }
