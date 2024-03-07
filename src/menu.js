@@ -1,27 +1,6 @@
-const categories = [
-  {
-    group: 'Ramens',
-    menuItems: [
-      {
-        name: 'Tonkotsu/Hakata Ramen',
-        description:
-          'Creamy soul-warming broth full of lip-smacking umami flavor, chewy noodles, and toppings that can include everything from tender fatty pork belly to soft boiled eggs with their golden yolk, nutty-sweet sesame seeds, earthy scallions, and crunchy bean sprouts',
-        price: 25000
-      }
-    ]
-  },
-  {
-    group: 'Myeons',
-    menuItems: [
-      {
-        name: 'Ramyeon',
-        description:
-          'Creamy soul-warming broth full of lip-smacking umami flavor, chewy noodles, and toppings that can include everything from tender fatty pork belly to soft boiled eggs with their golden yolk, nutty-sweet sesame seeds, earthy scallions, and crunchy bean sprouts',
-        price: 25000
-      }
-    ]
-  }
-];
+import { menu } from './menuData';
+
+const categories = Object.entries(menu);
 
 function createMenu(name, description, price) {
   const menuRow = document.createElement('div');
@@ -36,7 +15,7 @@ function createMenu(name, description, price) {
 
   menuName.textContent = name;
   menuDescription.textContent = description;
-  menuPrice.textContent = `Rp. ${price}`;
+  menuPrice.textContent = `$${price}`;
 
   menuRow.appendChild(menuName);
   menuRow.appendChild(menuDescription);
@@ -81,15 +60,21 @@ function createMenuWrapper() {
   const tabTitleContainer = document.createElement('div');
   tabTitleContainer.classList.add('tab-title-container');
 
-  const tabTitle = document.createElement('span');
+  const tabTitle = document.createElement('div');
   tabTitle.classList.add('tab-title');
   tabTitle.textContent = 'Our menu';
+  
+  const bestSaler = document.createElement('div');
+  bestSaler.classList.add('best-seller');
+  bestSaler.textContent = "This week's best seller: Indomie + Iced Tea";
+  
   tabTitleContainer.appendChild(tabTitle);
+  tabTitleContainer.appendChild(bestSaler);
 
   menuWrapper.appendChild(tabTitleContainer);
 
-  for (const category of categories) {
-    const categoryElement = createCategory(category.group, category.menuItems);
+  for (const [group, menuItems] of categories) {
+    const categoryElement = createCategory(group, menuItems);
     menuWrapper.appendChild(categoryElement);
   }
 
