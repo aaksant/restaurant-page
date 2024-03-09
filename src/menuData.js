@@ -186,7 +186,7 @@ export const menu = {
     {
       name: 'Indomie Mi Goreng',
       description:
-        'The pride of Indonesian. Fried noodle with sweet-salty, umami-packed treat thanks to not one but five flavor packets: seasoning powder, seasoning oil, sweet soy sauce, chili sauce, and fried shallots. Add a fried egg and day is perfect.',
+        'The pride of Indonesian. Fried noodle with sweet-salty, umami-packed treat thanks to not one but five flavor packets: seasoning powder, seasoning oil, sweet soy sauce, chili sauce, and fried shallots. Add a fried egg and your day is perfect.',
       price: 4.0
     },
     {
