@@ -1,5 +1,6 @@
 import loadHome from './home';
 import loadMenu from './menu';
+import loadAbout from './about';
 
 function setCurrentTab(tab) {
   const tabs = document.querySelectorAll('.nav-btn');
@@ -58,7 +59,7 @@ function loadNav() {
       e.preventDefault();
     } else {
       setCurrentTab(aboutTab);
-      // loadAbout();
+      loadAbout();
     }
   });
 
