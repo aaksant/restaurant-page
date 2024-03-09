@@ -195,6 +195,19 @@ a {
   color: var(--primary-white);
 }
 
+.about-wrapper {
+  background-color: rgba(0, 0, 0, .8);
+  height: 100%;
+  padding: var(--medium-padding);
+}
+
+.about-text {
+  color: var(--primary-white);
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
 .trademarks,
 .footer a {
   opacity: 20%;
